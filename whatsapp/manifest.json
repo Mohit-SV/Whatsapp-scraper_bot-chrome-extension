@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "name": "Wapp scraper",
+  "description": "text back on whatsapp",
+  "version": "1.0",
+
+  "page_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  
+  "background": {
+    "scripts": ["eventPage.js", "imports.js"]
+  },
+
+  "content_scripts":[
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js", "jquery-3.1.0.min.js"]
+    }
+  ],
+
+  "permissions": [
+	"storage",
+    "tabs",
+    "https://web.whatsapp.com/*",
+	"activeTab",
+    "https://ajax.googleapis.com/",
+    "tabs",
+    "http://*/*", "https://*/*", "background"
+]
+}
